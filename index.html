@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Verificador de Voto</title>
+    <title>Positivo, negativo ou neutro?</title>
     <style>
 
     body {
@@ -15,12 +15,12 @@
     }
 
     input {
-    padding: 10px;
+    padding: 1px;
     font-size: 16px;
     }
 
     button {
-    padding: 10px 15px;
+    padding: 1px 15px;
     font-size: 16px;
     margin-left: 10px;
     cursor: pointer;
@@ -36,32 +36,40 @@
 </head>
 
 <body>
- <h1>Número positivo, negativo ou neutro?</h1>
- <p>Digite o número:</p>
- <input type="number" id="valor" placeholder="Ex: 25">
- <button onclick="verificarNumero()">Verificar</button>
- <p id="resultado"></p>
 
-<script>
+    <h1>Número positivo, negativo ou neutro?</h1>
 
-function verificarNumero() {
-    const valor = parseFloat(document.getElementById("valor").value);
-    let mensagem = "";
+    <table border="1">
+        <tr>
+            <td><p>Digite o número:</p></td>
+            <td><input type="number" id="valor" placeholder="Ex: 25"></td>
+            <td><button onclick="verificarNumero()">Verificar</button></td>
+        </tr>
+        <tr>
+            <td colspan="3"><p id="resultado"></p></td>
+        </tr>
+    </table>
 
-    if (isNaN(valor)) {
-        mensagem = "Por favor, digite um número válido.";
-    } else if (valor > 0) {
-        mensagem = "O número é positivo.";
-    } else if (valor < 0) {
-        mensagem = "O número é negativo.";
-    } else {
-        mensagem = "O número é zero.";
+    <script>
+
+    function verificarNumero() {
+        const valor = parseFloat(document.getElementById("valor").value);
+        let mensagem = "";
+
+        if (isNaN(valor)) {
+            mensagem = "Por favor, digite um número válido.";
+        } else if (valor > 0) {
+            mensagem = "O número é positivo.";
+        } else if (valor < 0) {
+            mensagem = "O número é negativo.";
+        } else {
+            mensagem = "O número é zero.";
+        }
+
+        document.getElementById("resultado").innerText = mensagem;
     }
 
-    document.getElementById("resultado").innerText = mensagem;
-}
-
-</script>
+    </script>
 
 </body>
 
