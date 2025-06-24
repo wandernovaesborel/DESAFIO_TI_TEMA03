@@ -7,43 +7,78 @@
     <title>Positivo, negativo ou neutro?</title>
     <style>
 
-    body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-    background-color: #f9f9f9;
-    }
+        /* ===== TEMA PADRÃO (CLARO) ===== */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f9f9f9;
+            color: #2a2a2a;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    input {
-    padding: 1px;
-    font-size: 16px;
-    }
+        input {
+            padding: 1px;
+            font-size: 16px;
+            background-color: white;
+            color: #333;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    button {
-    padding: 1px 15px;
-    font-size: 16px;
-    margin-left: 10px;
-    cursor: pointer;
-    }
+        button {
+            padding: 1px 15px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            color: #333;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    #resultado {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #2a2a2a;
-    }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2a2a2a;
+            transition: color 0.3s;
+        }
 
-    table {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-    }
+        table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
+        /* ===== TEMA ESCURO ===== */
+        body.theme-dark {
+            background-color: #222;
+            color: #f8f9fa;
+        }
+
+        body.theme-dark #resultado {
+            color: #f8f9fa;
+        }
+
+        body.theme-dark input {
+            background-color: #333;
+            color: #f8f9fa;
+            border-color: #555;
+        }
+
+        body.theme-dark button {
+            background-color: #444;
+            color: #f8f9fa;
+            border-color: #666;
+        }
 
     </style>
 </head>
 
 <body>
 
+    <button class="theme-toggle-btn">🌓</button>
     <h1>Número positivo, negativo ou neutro?</h1>
 
     <table>
@@ -75,6 +110,11 @@
 
         document.getElementById("resultado").innerText = mensagem;
     }
+
+    // === TEMA ESCURO/CLARO ===
+    document.querySelector('.theme-toggle-btn').addEventListener('click', () => {
+    document.body.classList.toggle('theme-dark');
+});
 
     </script>
 
