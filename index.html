@@ -17,6 +17,14 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+        button.theme-toggle-btn {
+            padding: 1px 15px;
+            font-size: 16px;
+            background-color: #ffffff;
+            border: 0px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
         input {
             padding: 1px;
             font-size: 16px;
@@ -26,7 +34,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        button {
+        button.verificar {
             padding: 1px 15px;
             font-size: 16px;
             margin-left: 10px;
@@ -61,6 +69,14 @@
             color: #f8f9fa;
         }
 
+        body.theme-dark button.theme-toggle-btn {
+            padding: 1px 15px;
+            font-size: 16px;
+            background-color: #222;
+            border: 0px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
         body.theme-dark input {
             background-color: #333;
             color: #f8f9fa;
@@ -85,7 +101,7 @@
         <tr>
             <td><p>Digite o número:</p></td>
             <td><input type="number" id="valor" placeholder="Ex: 25"></td>
-            <td><button onclick="verificarNumero()">Verificar</button></td>
+            <td><button onclick="verificarNumero()" class="verificar">Verificar</button></td>
         </tr>
         <tr>
             <td colspan="3"><p id="resultado"></p></td>
